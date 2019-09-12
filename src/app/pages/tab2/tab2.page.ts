@@ -1,4 +1,6 @@
+import { PopoverPage } from './../popover/popover.page';
 import { Component, OnInit } from '@angular/core';
+import { PopoverController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab2',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab2Page implements OnInit {
 
-  constructor() { }
+  constructor(private popoverController: PopoverController) { }
 
   ngOnInit() {
+  }
+  async openPopover(){
+    const popover = await this.popoverController.create({
+      component: PopoverPage,
+      componentProps: {
+        values: 'Esto es una ventana modal popover'
+      }
+    })
+    console.log('Esto es una ventana modal popover')
+    return await popover.present();
   }
 
 }

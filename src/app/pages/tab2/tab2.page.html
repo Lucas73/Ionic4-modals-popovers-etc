@@ -1,9 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>tab2</ion-title>
+    <ion-title>Esto es un popover</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-list>
+  <ion-item button color="danger" (click)="closePopover()">
+  <ion-icon name="close" slot="start"></ion-icon>
+    Cerrar Popover
+  </ion-item>
+</ion-list>
+  
+<ion-content padding>
+  <ion-button expand="full" (click)="openPopover()">Abrir Popover</ion-button>
 </ion-content>
