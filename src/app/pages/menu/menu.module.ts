@@ -23,6 +23,10 @@ const routes: Routes = [
       {
         path: 'second/details',
         loadChildren: '../details/details.module#DetailsPageModule'
+      },
+      {
+        path:'third',
+        loadChildren:'../third/third.module#ThirdPageModule'
       }
     ]
   }

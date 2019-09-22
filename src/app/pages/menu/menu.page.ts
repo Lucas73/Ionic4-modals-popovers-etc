@@ -15,6 +15,10 @@ export class MenuPage implements OnInit {
     {
       title: 'Segunda página con detalles',
       url: '/menu/second',
+    },
+    {
+      title: 'Página con Search Bar',
+      url: '/menu/third',
     }
 
   ]

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Tercera página con Search Bar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar
+  animated
+  debounced="700"
+  [(ngModel)]="searchTerm"
+  placeholder="Busque una tarea"
+  (ionInput) = setFilteredItems($event)
+  showCancelButton></ion-searchbar>
+  <div *ngIf="sinItems" text-center>
+    <ion-text color="warning">
+      <h1>
+        <ion-icon size="large" color="warning" name="warning"></ion-icon>
+        No se han encontrado tareas con ese nombre
+      </h1>
+    </ion-text>
+  </div>
+  <ion-list>
+    <ion-item *ngFor="let item of items" (click)="presentActionSheet()">
+      <ion-icon name="arrow-droplight" slot="start"></ion-icon>
+      <ion-label>
+        {{ item.title }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
